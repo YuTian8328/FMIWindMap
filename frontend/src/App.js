@@ -8,7 +8,16 @@ import MyChart from './Chart';
 import Map from './Map';
 import Circle from './components/Circle';
 
+const apiUrl = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
+axios.get(apiUrl)
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 
 const initStatus = {
   zoom: 6,
@@ -51,7 +60,7 @@ function App() {
     setDatastate(true);
     event.preventDefault();
 
-    const url = 'http://localhost:8000/process';
+    const url = `${apiUrl}/process`;
 
     const formData = new FormData();
 
