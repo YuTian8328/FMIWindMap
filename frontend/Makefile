@@ -8,7 +8,7 @@ build:
 	docker build -t $(DEV_IMAGE_NAME) -f Dockerfile.dev .
 
 run:
-	docker run --rm --name $(DEV_CONTAINER_NAME) -p 3000:3000 -v $(shell pwd)/src/:/app/src/ -v $(shell pwd)/public/:/app/public/ -v $(shell pwd)/.env.local:/app/.env.local $(DEV_IMAGE_NAME)
+	docker run --rm --name $(DEV_CONTAINER_NAME) -p 3000:3000 -v $(shell pwd)/src/:/app/src/ -v $(shell pwd)/public/:/app/public/ -v $(shell pwd)/.env:/app/.env $(DEV_IMAGE_NAME)
 
 stop:
 	docker stop $(DEV_CONTAINER_NAME)
