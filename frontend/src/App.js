@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
-import $ from 'jquery';
+// import $ from 'jquery';
 import MyChart from './Chart';
 import Map from './Map';
 import Circle from './components/Circle';
@@ -34,7 +34,7 @@ function App() {
   const [tg, setTG] = useState(1);
   const [process, setProcess] = useState([]);
   const [chartstate, setChartstate] = useState(false);
-  const [mapstate, setMapstate] = useState(null);
+  // const [mapstate, setMapstate] = useState(null);
   const [fractions, setFractions] = useState([]);
   const [datastate, setDatastate] = useState(false);
 
@@ -42,7 +42,7 @@ function App() {
 
     setFile(event.target.files[0]);
     setChartstate(false);
-    setMapstate(false);
+    // setMapstate(false);
     // console.log(file.filename)
 
     // setFileName(event.target.files[0].name)
@@ -101,11 +101,11 @@ function App() {
       setDatastate(false);
     }
   };
-  function generateMap() {
-    if (fractions.length !== 0) {
-      setMapstate(true);
-    }
-  };
+  // function generateMap() {
+  //   if (fractions.length !== 0) {
+  //     setMapstate(true);
+  //   }
+  // };
 
 
 
@@ -152,17 +152,18 @@ function App() {
         : <div>No process yet...</div>
       }
       <hr />
-      <button onClick={generateMap}>Generate map</button>
+      {/* <button onClick={generateMap}>Generate map</button> */}
       <h2>Generated Map</h2>
-      {mapstate
-        ? <div>
+      {/* {mapstate */}
+        {/* ?  */}
+        <div>
           <Map
             apiKey={apiKey}
             initStatus={initStatus}
             Component={Circle}
             data={fractions}
           /> </div >
-        : <div>No map generated yet </div>}
+        {/* : <div>No map generated yet </div>} */}
 
     </div>
 
