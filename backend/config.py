@@ -1,5 +1,11 @@
+import os
+
 from windpowerlib import WindTurbine
 import pandas as pd
+
+
+ORIGIN = os.environ.get("ORIGIN", "http://localhost:3000") 
+
 BATTERY_CAPACITY = 1000
 
 # radius of a turbine is r_turbine=10 meters
