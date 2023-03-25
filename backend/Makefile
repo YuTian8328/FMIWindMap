@@ -19,7 +19,7 @@ prod-build:
 	docker build -t $(PROD_IMAGE_NAME) .
 
 prod-run:
-	docker run --rm --name $(PROD_CONTAINER_NAME) -p 8000:8000 $(PROD_IMAGE_NAME)
+	docker run --rm --name $(PROD_CONTAINER_NAME) -p 8000:8000 -e ORIGIN=http://localhost $(PROD_IMAGE_NAME)
 
 prod-stop:
 	docker stop $(PROD_CONTAINER_NAME)
