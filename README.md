@@ -13,4 +13,3 @@ REACT_APP_GOOGLE_API_KEY=<YOU_API_KEY>
 
 Create your own `./frontend/.env`
 
-Modify the `ORIGIN` environment variable in `./backend/Makefile`
