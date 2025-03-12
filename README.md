@@ -10,7 +10,6 @@ REACT_APP_GOOGLE_API_KEY=<YOU_API_KEY>
 
 ### Prod
 
-`ssh -i <YOUR_KEY> ubuntu@powermap.fedai.link`
 
 Create your own `./frontend/.env`
 
