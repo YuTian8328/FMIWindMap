@@ -1,6 +1,6 @@
 .Ds_Store
 frontend/package-lock.json
- frontend/src/gMap.jsx
+frontend/src/gMap.jsx
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
