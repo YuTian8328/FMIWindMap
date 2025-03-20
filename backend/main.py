@@ -3,7 +3,7 @@ import shutil
 from typing import Annotated
 from fastapi import FastAPI, Form, File, UploadFile, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from fraction import get_fractions_FMI
+from fraction import get_fractions_FMI_parallel
 import json
 from utils import load_process
 import json
@@ -34,7 +34,7 @@ async def upload_process(file: UploadFile = File(), timegranu: str = Form()):
     # process = load_process(file.filename)
     with open(file.filename, "r") as f:
         process_ = json.load(f)
-    workable_fractions = get_fractions_FMI(
+    workable_fractions = get_fractions_FMI_parallel(
         process=process_, battery_capacity=1000, time_granularity_process=int(timegranu), time_granularity_wind=10, step_size=1000)
 
     return {"file_name": file.filename, "process": process_, "fractions": workable_fractions}
@@ -54,3 +54,8 @@ async def upload_process(file: UploadFile = File(), timegranu: str = Form()):
 # @app.get("/fractions")
 # async def get_fractions(fractions: dict = Depends(get_fractions_FMI)):
 #     return fractions
+
+
+# @app.get("/favicon.ico")
+# async def get_favicon():
+#     return {}

@@ -12,8 +12,8 @@ dev-build:
 dev-run:
 	docker run --rm --name $(DEV_CONTAINER_NAME) -p 8000:8000 -v $(shell pwd):/app $(DEV_IMAGE_NAME)
 
-dev-stop:
-	docker stop $(DEV_CONTAINER_NAME)
+# dev-stop:
+# 	docker stop $(DEV_CONTAINER_NAME)
 
 prod-build:
 	docker build -t $(PROD_IMAGE_NAME) .
