@@ -4,7 +4,7 @@ from windpowerlib import WindTurbine
 import pandas as pd
 
 
-ORIGIN = os.environ.get("ORIGIN", "http://localhost:3000") 
+ORIGIN = os.environ.get("ORIGIN", "http://localhost:3000")
 
 BATTERY_CAPACITY = 1000
 
@@ -29,7 +29,22 @@ my_turbine = {
 }
 # initialize WindTurbine object
 my_turbine = WindTurbine(**my_turbine)
+
+rutland504 = {
+    'nominal_power': 3e6,  # in W
+    'hub_height': 10,  # in m
+    'power_curve': pd.DataFrame(
+        data={'value': [
+            0.0, 0.0, 3.0, 11.1, 29.0, 39.0],  # in W
+            'wind_speed': [0.0, 3.0, 5.1, 7.0, 11.0, 13.0]})  # in m/s
+}
+# initialize WindTurbine object
+rutland504 = WindTurbine(**rutland504)
 n100 = {
     'hub_height': 100,
     'turbine_type': 'N100/2500'}
 n100 = WindTurbine(**n100)
+e48 = {
+    'hub_height': 100,
+    'turbine_type': 'E48/800'}
+e48 = WindTurbine(**e48)
