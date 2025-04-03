@@ -1,14 +1,12 @@
 import './App.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import axios from 'axios';
 import MyChart from './Chart';
 import Map from './Map';
-import Circle from './components/Circle';
 
 const apiUrl = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 axios.get(apiUrl)
   .then(response => {
@@ -27,7 +25,6 @@ const initStatus = {
 }
 
 function App() {
-  let chart = null;
 
   const [file, setFile] = useState(0);
   const [tg, setTG] = useState(1);
